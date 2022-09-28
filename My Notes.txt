@@ -282,7 +282,12 @@ use reducer best example
 splice method in js
 var arr = [23,45,67,88,98];
 var removed = arr.splice(3,1);
-console.log(arr)
+console.log(arr) //88
+-------------------------------------------------------
+Difference between State and a Prop
+
+
+
 -------------------------------------------------------
 
 Date of creation 
