@@ -1,0 +1,297 @@
+function hello () {
+  var a =86;
+  console.log(a)
+  
+}
+hello();
+
+--------------------------------------------------------------------------
+let a = 10;
+function f() {
+  if(true){
+    var b=25;
+    console.log(`inside if scope ${b}`)
+
+  }
+  console.log(`outside the scope ${b}`)
+
+   
+}
+f()
+
+// It prints 10
+console.log(a)
+//best example for var and let keyword
+------------------------------------------------------------------------------
+
+
+4145 : 4+1+4+5 = 14: 1+4 =5//
+
+var num = 153089
+var sum = 0;
+
+add(num)
+
+function add(num){
+  let newarr =num.toString().split('')
+  console.log(newarr)
+  if(newarr.length != 1)
+  {
+    newarr.map((data)=>{
+      sum += parseInt(data);
+      
+    })
+    console.log(sum)
+   
+    if(sum >= 9){
+      newarr =sum.toString().split('');
+      sum=0;
+      newarr.map((data)=>{
+        sum += parseInt(data)
+      })
+      if(sum>=9){
+        add(sum)
+      }
+      else{
+        console.log(`The final result is ${sum}`)
+      }
+    }
+    else{
+      console.log(`The final result is ${sum}`)
+    }
+  
+  }
+  else
+  {
+      console.log("The answer is " + newarr)
+  }
+}
+
+
+---------------------------------------------------------------------------
+Hoisting in Javascript
+
+Hoisting is a phenomenon in which one can access the function and variables
+even before you have initialized it or u have put some value in it without any error
+
+example:
+
+read()
+console.log(hooist)
+
+function read(){
+  console.log("Hello hoisting")
+}
+var hooist =17;
+
+when a arrow function is used insted of normal function key word
+javascript will consider it as a normal variable.
+
+-------------------------------------------------------------------------------
+Can a const object be updated (properties)
+
+const vandobj = {
+  name: "Adarsh",
+  usn: "4jn17cs120",
+  degree: "CS"
+}
+
+vandobj.name="Santosh"
+
+console.log(vandobj)
+
+// output {name: "Santosh", usn: "4jn17cs120", degree: "CS"}
+-----------------------------------------------------------------------------
+//use of spread operator
+
+let student = {
+  name: "Adarsh Naik",
+  age: 19,
+  address : "Shimoga"
+}
+
+let student1 = {...student, age:23, name:"Bharath"}
+
+console.log(student1)
+------------------------------------------------------------------------------
+// rest operator use in objects
+let employee = {
+  ename: "atal",
+  tech: "react",
+  state: "Bihar"
+}
+const {tech, ...baki}= employee;
+console.log(tech)
+------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+Event loop in Javascript
+
+Javascript was bascally build for Web browsers like chrome firefox etc
+chrome uses v8 which is single threaded as it has one call stack
+it executes one work at a time
+
+call stack works like a normal stack last in first out
+
+eg: 
+console.log("hello")
+let a=0;
+let b=0;
+function multiply( a*b)
+{
+  let res = a*b;
+  console.log(res)
+}
+function start(){
+  multiply(1*2)
+}
+start()
+
+variable declared while writing a program in stored somewhere in memory and that is called as heap
+
+some times function block based on logic external db call will take lot of time to execute in these situation the function is pushed to web api from call stack
+
+web api executes AJAX call, setTimeout, DOM etcc.....
+
+asynchronous calls will be delegated to web api which a programmer doesn't have any control on
+
+After the execution of asychronous call the response & callbacks is stored to task queue so that it will transfer the result to call stack using a call back
+
+Event loop will check if there are any callbacks in task queue if there it will trasfer those to call stack only when the call stack is empty
+
+------------------------------------------------------------------------
+Call Back functions 
+
+Functions that can be passed within an asynchronous function
+call back executes only after the execution of asynchronous function
+
+Though a javascript is an single threaded synchronous language
+with the help of callbacks we can get back asynchrounous nature too
+
+------------------------------------------------------------------------------
+Hacker Rank soultion to find positive negative and 0
+const arr = [-4, 3, -9, 0, 4, 1]
+var poscount =0;
+var negcount =0;
+var zerocount =0;
+const size = arr.length;
+arr.map((data)=>{
+  if(data>0)
+  {
+     poscount += 1;
+  }
+  else if(data <0)
+  {
+     negcount += 1;
+  }
+  else {
+     zerocount +=1;
+  }
+  
+})
+
+console.log("size of arr", size)
+console.log("positive cases" ,poscount)
+console.log("Negative case", negcount)
+console.log("Zero count", zerocount)
+-----------------------------------------------------------------------------
+
+Closure in javascript
+
+function restart(){
+
+  var x = 4;
+  
+  function innerone(){
+    console.log(x)
+  }
+  innerone()
+}
+restart()
+
+---------------------------------------------------------------
+setTimeout(function () {
+  console.log('an asynchrounous function got triggered');
+}, 5000);
+
+//setTimeout function will be executed after 5 seconds
+
+function x(y) {
+  console.log('x function executed');
+  y();
+} // x is a normal function where y is passed in the parameter
+
+x(function y() {
+  console.log('Y function executed');
+});
+//here im calling x function where function y logic is written inside a parameter
+
+
+----------------------------------------------------------------
+Hook is a special function it lets u put state into a react function
+hook can only be used in functional components not in class based components.
+
+If you start using state and components without hook it might change the value
+within the js console but it will not be re rendereing the screen again and again.
+
+----------------------------------------------------------------------
+UseEffect is a hook that allows the developer to perform a side effects in the components
+it takes two parameters one is a arrow function/ callback function 
+another one can be a variable, array, object etc
+use effect hook executes whenever the application re renders
+
+----------------------------------------------------------------------
+copying object by ref and by value
+
+var arr = [1,2,3,4,5]
+var arr2 = arr
+
+arr2[2]=10
+
+both arr2 and arr will get updated because of same reference
+
+-----------------------------------------------------------------------
+
+var arr = [1,2,3,4,5]
+var arr2 = [...arrr]
+arr2[2]=30
+
+arr2 and arr will not be the same 
+ same thing demonstrated below with example
+let arr1 = [1, 2, 3, 4, 5];
+
+let arr2 = [...arr1];
+
+arr2[3] = 45;
+console.log(arr2);
+console.log(arr1); //deep copy where references of both arr2 and arr1 is different
+--------------------------------------------------------------------
+
+Usereducer is an alternative hook for usestate
+
+const[state,dispatch] = useReducer(reducer, initialstate)
+// this is declaration part where useReducer function has reducer function and initialstate as parameters
+dispatch is used at the time of calling a function
+
+reducer can be a arrow function which has state and action as parameters
+
+action.type referes to which function we can use if else or a switch case also
+
+https://youtu.be/R5G2acJ6_vQ
+use reducer best example
+-------------------------------------------------------------------
+splice method in js
+var arr = [23,45,67,88,98];
+var removed = arr.splice(3,1);
+console.log(arr)
+-------------------------------------------------------
+
+Date of creation 
+expected date to finish
+name of the task
+author
+
+With Redux:
+user creates data to be stored store
+
+sign in 
+sign up
