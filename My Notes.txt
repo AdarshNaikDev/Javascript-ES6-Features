@@ -300,3 +300,24 @@ user creates data to be stored store
 
 sign in 
 sign up
+
+
+
+function whichSwitch(degree) {
+  switch (degree) {
+    case "CV":
+      console.log('civil engineer');
+      break;
+    case "CSE":
+      console.log('computer science engineer');
+      break;
+
+    case "ECE":
+      console.log('Electronics engineer');
+      break;
+    default:
+      console.log('Cyber cafe work');
+  }
+}
+
+whichSwitch("CV")
