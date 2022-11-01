@@ -1,8 +1,7 @@
-function dosomething() {
-  for (var i = 1; i < 5; i++) {
-    console.log(i);
-  }
-  console.log(i);
-}
+read()
+console.log(hooist)
 
-dosomething();
+function read(){
+  console.log("Hello hoisting")
+}
+var hooist =17;

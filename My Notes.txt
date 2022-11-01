@@ -321,3 +321,7 @@ function whichSwitch(degree) {
 }
 
 whichSwitch("CV")
+
+
+To know more about events
+https://reactjs.org/docs/events.html
