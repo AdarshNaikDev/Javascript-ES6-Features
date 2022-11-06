@@ -1,7 +1,10 @@
-read()
-console.log(hooist)
-
-function read(){
-  console.log("Hello hoisting")
+var patient = {
+  "name" : "Adarsh Naik",
+  "city" : "Shimoga"
 }
-var hooist =17;
+
+patient.job = ()=>{
+  console.log(patient.name +" is an associate software engineer")
+}
+
+console.log(patient)
