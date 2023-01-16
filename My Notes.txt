@@ -325,3 +325,19 @@ whichSwitch("CV")
 
 To know more about events
 https://reactjs.org/docs/events.html
+
+
+
+------------------------what are the key features in ES6 2015 javascript-----------------------------------------
+
+1. Arrow functions
+2. Const and let keywords
+3. Rest and spread operator
+4. Classes 
+5. Template literals
+6. Promises
+7.Async and await keywords
+8. Map, set (weakmap/weak set) Data structrues in javascript
+9. Object/Array destructring 
+10. Generators
+
