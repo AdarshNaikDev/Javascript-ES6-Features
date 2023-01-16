@@ -341,3 +341,19 @@ https://reactjs.org/docs/events.html
 9. Object/Array destructring 
 10. Generators
 
+------------------------------Best example for Closures------------------------------------------
+
+function outerfun(){
+var x=0;
+
+function innerfun(){
+ console.log(x);
+ x++;
+ }
+ return {innerfun}
+ }
+ 
+ var reference = outerfun();
+ reference.innerfun();
+ reference.innerfun();
+ reference.innerfun();
