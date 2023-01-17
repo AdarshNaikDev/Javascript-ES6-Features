@@ -357,3 +357,22 @@ function innerfun(){
  reference.innerfun();
  reference.innerfun();
  reference.innerfun();
+ 
+ 
+ 
+ ----------------------------------About Function Currying------------------------------------------
+ Function currying is a speical technique in javascript where you can call a function with one arghument in a sequence rather than calling the multiple arguments in a function
+ 
+ for example
+ 
+ const curry = (a)=>{
+  return(b)=>{
+    return(c)=>{
+      return a+b+c
+    }
+  }
+ }
+ 
+ console.log(curry(2)(3)(4))
+ 
+ Function currying allows to create more expressive reusable composable functions which can be reused or utilised in a better way!!
