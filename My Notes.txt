@@ -376,3 +376,25 @@ function innerfun(){
  console.log(curry(2)(3)(4))
  
  Function currying allows to create more expressive reusable composable functions which can be reused or utilised in a better way!!
+ 
+ 
+ ----------------------------------------About objects in JS ----------------------------------------------
+ In an object declared with const keyword we can change it's property value we can add new properties but we cannot pass object 2 to object 1;
+
+ const obj = {
+            name: "adarsh",
+            place: "shimoga",
+            work:"bangalore"
+        }
+        const obj2 = {
+            name:"manoj",
+            place:"shimoga"
+        }
+
+        obj.work = "Karwar"
+        obj.place = "koppal",
+        obj.native = "Nr pura"
+        console.log(obj);
+
+        obj = obj2;
+        console.log(obj); // gives error assignment to a const variable
