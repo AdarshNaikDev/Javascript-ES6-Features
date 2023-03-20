@@ -398,3 +398,32 @@ function innerfun(){
 
         obj = obj2;
         console.log(obj); // gives error assignment to a const variable
+        
+        
+  ************************---------------------------------------***********************************************************
+  //A new way to create an object
+
+const oldObject = {
+    uName : "Adarsh",
+    city: "Shimoga"
+}
+
+const newObj = Object.create(oldObject)
+newObj.uName = "New Name"
+newObj.city = "Mumbai"
+
+//Use of Object.assign is to copy two objects into a new one
+
+const carObj={
+    cName : "Celelrio"
+}
+
+const companyObj = {
+    compName : "Maruthi"
+}
+
+const newObj = Object.assign({},carObj,companyObj)
+console.log(newObj)
+
+Output:
+{ cName: 'Celelrio', compName: 'Maruthi' }
