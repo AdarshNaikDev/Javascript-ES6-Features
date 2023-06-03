@@ -286,6 +286,81 @@ console.log(arr) //88
 -------------------------------------------------------
 Difference between State and a Prop
 
+***********************************This keyword differences************************************
+Certainly! Here are examples of normal functions and arrow functions in different scenarios:
+
+1. Global Scope:
+
+```javascript
+// Normal function in the global scope
+function normalGlobalFunction() {
+  console.log(this); // Refers to the global object (e.g., window)
+}
+
+// Arrow function in the global scope
+const arrowGlobalFunction = () => {
+  console.log(this); // Refers to the same value as the enclosing scope
+};
+
+normalGlobalFunction(); // Logs the global object (e.g., window)
+arrowGlobalFunction(); // Logs the same value as the enclosing scope (possibly undefined in strict mode)
+```
+
+2. Object Method:
+
+```javascript
+const obj = {
+  name: 'John',
+  // Normal function as object method
+  normalMethod: function() {
+    console.log(this.name); // Refers to the object itself ('John')
+  },
+  // Arrow function as object method
+  arrowMethod: () => {
+    console.log(this.name); // Refers to the value of 'this' from the surrounding scope (possibly undefined)
+  }
+};
+
+obj.normalMethod(); // Logs 'John'
+obj.arrowMethod(); // Logs undefined
+```
+
+3. Constructor Function:
+
+```javascript
+// Normal constructor function
+function NormalConstructor(name) {
+  this.name = name;
+}
+
+const normalInstance = new NormalConstructor('Alice');
+console.log(normalInstance.name); // Logs 'Alice'
+
+// Arrow function as constructor (throws an error)
+const ArrowConstructor = (name) => {
+  this.name = name;
+};
+
+const arrowInstance = new ArrowConstructor('Bob'); // Throws an error: "ArrowConstructor is not a constructor"
+```
+
+4. Event Handlers:
+
+```javascript
+const button = document.getElementById('myButton');
+
+// Normal function as event handler
+button.addEventListener('click', function() {
+  console.log(this); // Refers to the clicked button element
+});
+
+// Arrow function as event handler
+button.addEventListener('click', () => {
+  console.log(this); // Refers to the same value as the enclosing scope (possibly undefined)
+});
+```
+
+Please note that the behavior of `this` can be affected by various factors, including strict mode, how functions are invoked, and whether functions are defined within other functions or closures. The examples provided demonstrate the general behavior of `this` in different contexts, but it's important to understand the specifics and nuances based on the particular scenario and code structure.
 
 
 -------------------------------------------------------
